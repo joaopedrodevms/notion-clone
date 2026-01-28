@@ -1,8 +1,8 @@
 "use client";
 
 import { ModeToggle } from "@/components/mode-toggle";
-import { Spinner } from "@/components/spinner";
 import { Button } from "@/components/ui/button";
+import { Spinner } from "@/components/ui/spinner";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
