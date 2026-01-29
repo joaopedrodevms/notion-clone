@@ -6,6 +6,7 @@ import { ChevronsLeftIcon, MenuIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ComponentRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts"
+import { UserItem } from "./user-item";
 
 const Navigation = () => {
 
@@ -71,14 +72,13 @@ const Navigation = () => {
             );
             navbarRef.current.style.setProperty(
                 "left",
-                isMobile ? "100%" : "240px"
+                "240px"
             )
             setTimeout(() => {
                 setIsResetting(false);
             }, 300);
         }
     }
-
     const collapse = () => {
         if (sidebarRef.current && navbarRef.current) {
             setIsCollapsed(true);
@@ -92,7 +92,6 @@ const Navigation = () => {
             }, 300);
         }
     }
-
 
     return (
         <>
@@ -108,14 +107,14 @@ const Navigation = () => {
                     variant="ghost"
                     size="icon"
                     className={cn(
-                        "size-6 absolute top-3 right-2 opacity-0 group-hover/sidebar:opacity-100 transition",
+                        "size-6 absolute top-3 right-2 opacity-0 group-hover/sidebar:opacity-100 transition text-muted-foreground",
                         isMobile && "opacity-100"
                     )}
                 >
                     <ChevronsLeftIcon className="size-6" />
                 </Button>
                 <div>
-                    <p>Items</p>
+                    <UserItem />
                 </div>
                 <div className="mt-4">
                     <p>Documentos</p>
@@ -135,14 +134,13 @@ const Navigation = () => {
                 )}>
                 <nav className="bg-transparent px-3 py-2 w-full">
                     {isCollapsed && (
-
                         <Button
                             onClick={resetWidth}
                             variant="ghost"
                             size="icon"
-                            className="size-6"
+                            className="size-6 text-muted-foreground"
                         >
-                            <MenuIcon className="size-6" />
+                            <MenuIcon className="size-5" />
                         </Button>
                     )}
                 </nav>
