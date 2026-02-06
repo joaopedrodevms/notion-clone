@@ -125,7 +125,7 @@ export const Item = ({
                             asChild
                         >
                             <Button variant={"ghost"} className="opacity-0 group-hover:opacity-100 ml-auto size-6">
-                                <MoreHorizontalIcon className="text-muted-foreground"/>
+                                <MoreHorizontalIcon className="text-muted-foreground" />
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent
@@ -135,7 +135,7 @@ export const Item = ({
                             forceMount
                         >
                             <DropdownMenuItem onClick={onArchive}>
-                                <Trash2Icon className=""/>
+                                <Trash2Icon className="" />
                                 Apagar
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
@@ -145,13 +145,13 @@ export const Item = ({
                         </DropdownMenuContent>
                     </DropdownMenu>
 
-                    <div 
+                    <div
                         onClick={onCreate}
                         className={cn(
                             buttonVariants({ variant: "ghost" }),
                             "opacity-0 group-hover:opacity-100 ml-auto size-6",
                         )}>
-                        <PlusIcon className="text-muted-foreground"/>
+                        <PlusIcon className="text-muted-foreground" />
                     </div>
                 </div>
             )}
@@ -162,13 +162,16 @@ export const Item = ({
 Item.Skeleton = function ItemSkeleton({ level }: { level?: number }) {
     return (
         <div
+            className={cn(
+                buttonVariants({ size: "sm", variant: "ghost" }),
+                "w-full justify-start"
+            )}
             style={{
                 paddingLeft: level ? `${(level * 12) + 25}px` : "12px"
             }}
-            className="flex gap-2 py-[3px]"
         >
-            <Skeleton className="size-4" />
-            <Skeleton className="h-4 w-[30%]" />
+            <Skeleton className="size-5" />
+            <Skeleton className="h-5 w-[30%]" />
         </div>
     )
 }

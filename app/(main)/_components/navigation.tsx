@@ -15,10 +15,12 @@ import { DocumentList } from "./document-list";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { TrashBox } from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 const Navigation = () => {
 
     const search = useSearch();
+    const settings = useSettings();
     const pathName = usePathname();
     const isMobile = useMediaQuery("(max-width: 768px)");
     const create = useMutation(api.documents.create);
@@ -140,7 +142,7 @@ const Navigation = () => {
                         icon={SearchIcon}
                     />
                     <Item
-                        onClick={() => { }}
+                        onClick={settings.onOpen}
                         label="Configurações"
                         icon={BoltIcon}
                     />

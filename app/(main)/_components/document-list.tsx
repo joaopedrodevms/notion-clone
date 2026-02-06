@@ -8,7 +8,6 @@ import { useState } from "react";
 import { Item } from "./item";
 import { cn } from "@/lib/utils";
 import { FileIcon } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
 
 interface DocumentListProps {
     parentDocumentId?: Id<"documents">;
