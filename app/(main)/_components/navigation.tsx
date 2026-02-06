@@ -2,7 +2,7 @@
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { BoltIcon, ChevronsLeftIcon, MenuIcon, PlusIcon, SearchIcon, Trash2Icon } from "lucide-react";
+import { BoltIcon, ChevronsLeftIcon, MenuIcon, PlusCircleIcon, PlusIcon, SearchIcon, Trash2Icon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { ComponentRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts"
@@ -14,9 +14,11 @@ import { toast } from "sonner";
 import { DocumentList } from "./document-list";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { TrashBox } from "./trash-box";
+import { useSearch } from "@/hooks/use-search";
 
 const Navigation = () => {
 
+    const search = useSearch();
     const pathName = usePathname();
     const isMobile = useMediaQuery("(max-width: 768px)");
     const create = useMutation(api.documents.create);
@@ -132,7 +134,7 @@ const Navigation = () => {
                 <div>
                     <UserItem />
                     <Item
-                        onClick={() => { }}
+                        onClick={search.onOpen}
                         label="Pesquisar"
                         isSearch
                         icon={SearchIcon}
@@ -144,8 +146,8 @@ const Navigation = () => {
                     />
                     <Item
                         onClick={handleCreate}
-                        label="New Page"
-                        icon={PlusIcon}
+                        label="Nova Página"
+                        icon={PlusCircleIcon}
                     />
                 </div>
                 <div className="mt-4">
@@ -153,7 +155,7 @@ const Navigation = () => {
                     <Item
                         onClick={handleCreate}
                         icon={PlusIcon}
-                        label="Nova Página"
+                        label="Adicionar Página"
                     />
                     <Popover>
                         <PopoverTrigger className="w-full mt-4">
