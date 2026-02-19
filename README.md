@@ -119,7 +119,7 @@ Clone funcional do Notion construído como projeto de portfólio. Workspace cola
 ### 1. Clone e instale
 
 ```bash
-git clone https://github.com/seu-usuario/notion-clone.git
+git clone https://github.com/joaopedrodevms/notion-clone.git
 cd notion-clone
 npm install
 ```
