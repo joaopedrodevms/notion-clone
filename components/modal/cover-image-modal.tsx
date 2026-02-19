@@ -77,7 +77,7 @@ export const CoverImageModal = () => {
                         width={100}
                         height={100}
                         dropzoneOptions={{
-                            maxSize: 1024 * 1024 * 1, // 1MB
+                            maxSize: 1024 * 1024 * 10, // 10MB
                         }}
                     />
                 </UploaderProvider>

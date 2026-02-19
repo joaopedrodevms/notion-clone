@@ -3,7 +3,7 @@
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { BoltIcon, ChevronsLeftIcon, MenuIcon, PlusCircleIcon, PlusIcon, SearchIcon, Trash2Icon } from "lucide-react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { ComponentRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts"
 import { UserItem } from "./user-item";
@@ -20,6 +20,7 @@ import { Navbar } from "./navbar";
 
 const Navigation = () => {
 
+    const router = useRouter();
     const search = useSearch();
     const settings = useSettings();
     const pathName = usePathname();
@@ -74,7 +75,10 @@ const Navigation = () => {
         document.addEventListener("mouseup", handleMouseUp);
     }
     const handleCreate = () => {
-        const promise = create({ title: "Untitled" });
+        const promise = create({ title: "Untitled" })
+        .then((documentId) => {
+            router.push(`/documents/${documentId}`);
+        });
         toast.promise(promise, {
             loading: "Criando documento...",
             success: "Documento criado com sucesso!",

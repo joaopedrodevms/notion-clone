@@ -71,7 +71,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
 
 
     return (
-        <div className="pl[54px] group relative">
+        <div className="pl-[54px] group relative">
             {!!initialData.icon && !preview && (
                 <div className="flex items-center gap-x-2 group/icon pt-6">
                     <IconPicker onChange={onIconSelect}>
@@ -92,7 +92,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
                     {initialData.icon}
                 </p>
             )}
-            <div className="opacity-100 group-hover:opacity-100 flex items-center gap-x-1 py-4">
+            <div className="opacity-0 group-hover:opacity-100 flex items-center gap-x-1 py-4">
                 {!initialData.icon && !preview && (
                     <IconPicker asChild onChange={onIconSelect}>
                         <Button

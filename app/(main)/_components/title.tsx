@@ -64,7 +64,6 @@ export const Title = ({ initialData }: TitleProps) => {
                 <Button
                     onClick={enableInput}
                     variant="ghost"
-                    // size={"sm"}
                     className="font-normal h-auto p-1">
                     {initialData.title}
                 </Button>

@@ -48,12 +48,12 @@ export const Menu = ({ documentId }: MenuProps) => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-60" align="end" alignOffset={8} forceMount>
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={onArchive}>
                     <Trash2Icon className="size-4" />
                     Apagar
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <div>
+                <div className="text-xs text-muted-foreground p-2">
                     Última modificação por: {user?.fullName}
                 </div>
             </DropdownMenuContent>
