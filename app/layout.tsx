@@ -10,8 +10,8 @@ import { EdgeStoreProvider } from '../lib/edgestore';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Knowledge",
-    description: "Storage and management of knowledge",
+    title: "notion",
+    description: "Storage and management of notion",
     icons: {
         icon: [
             {
@@ -43,7 +43,7 @@ export default function RootLayout({
                             defaultTheme="system"
                             enableSystem
                             disableTransitionOnChange
-                            storageKey="knowledge-theme"
+                            storageKey="notion-theme"
                         >
                             <Toaster position="bottom-center" />
                             <ModalProvider />

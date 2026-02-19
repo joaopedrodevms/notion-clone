@@ -28,7 +28,7 @@ export const SettingsModal = () => {
                     <div className="flex flex-col gap-1">
                         <Label>Aparencia</Label>
                         <span className="text-[0.8rem] text-muted-foreground">
-                            Customize a aparência do seu Knowledge.
+                            Customize a aparência
                         </span>
                     </div>
                     <ModeToggle />

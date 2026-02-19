@@ -44,7 +44,7 @@ const DocumentsPage = () => {
                 className="hidden dark:block"
             />
             <h2 className="text-lg font-medium">
-                Olá {user?.firstName}! Bem vindo ao Knowledge
+                Olá {user?.firstName}! Bem vindo ao notion
             </h2>
             <Button onClick={onCreate}>
                 <PlusIcon className="w-4 h-4" />
