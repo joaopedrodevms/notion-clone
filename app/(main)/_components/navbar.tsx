@@ -9,6 +9,7 @@ import { useParams } from "next/navigation";
 import { Title } from "./title";
 import { Banner } from "./banner";
 import { Menu } from "./menu";
+import { Publish } from "./publish";
 
 
 interface NavbarProps {
@@ -51,9 +52,8 @@ export const Navbar = ({ isCollapsed, onResetWidth }: NavbarProps) => {
                         initialData={document}
                     />
                     <div className="flex items-center gap-x-2">
-                        <Menu
-                            documentId={document._id}
-                        />
+                        <Publish initialData={document} />
+                        <Menu documentId={document._id}/>
                     </div>
                 </div>
             </nav>
